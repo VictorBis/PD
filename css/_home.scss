@@ -1,17 +1,14 @@
 /* Hero section */
 .hero {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3.125rem;
   @include flex(flex-end, center, column);
   flex-wrap: wrap;
 
   & .hero-info {
     flex: 1 1 46%;
-    & h1 {
-      margin: 1.5rem 0 2.5rem 0;
-    }
     & h3 {
-      margin: 1.5rem 0;
+      margin: 1.5rem 0 2.5rem 0;
     }
     & .opening-date {
       width: 14.56rem;
@@ -51,6 +48,7 @@
 @media screen and (min-width: 760px) {
   .hero {
     & .hero-info {
+      padding-right: 2rem;
       & .opening-date {
         width: 16.56rem;
       }
