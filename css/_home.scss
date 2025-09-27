@@ -1,0 +1,79 @@
+/* Hero section */
+.hero {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @include flex(flex-end, center, column);
+  flex-wrap: wrap;
+
+  & .hero-info {
+    flex: 1 1 46%;
+    & h1 {
+      margin: 1.5rem 0 2.5rem 0;
+    }
+    & h3 {
+      margin: 1.5rem 0;
+    }
+    & .opening-date {
+      width: 14.56rem;
+      text-align: center;
+    }
+  }
+  & .hero-img {
+    flex: 1 1 54%;
+    & img {
+      width: 100%;
+      height: auto;
+      margin-top: 3.5rem;
+    }
+  }
+  & .partenrs {
+    @include flex(space-between, center, row);
+    margin-top: 2.5rem;
+    & img {
+      margin: 0 0.5rem;
+      max-height: 1.875rem;
+      width: auto;
+    }
+    & :first-child {
+      margin-right: 1rem;
+    }
+    & :last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.title-desc {
+  @include flex(flex-start, flex-start, column);
+}
+
+/* Tablet */
+@media screen and (min-width: 760px) {
+  .hero {
+    & .hero-info {
+      & .opening-date {
+        width: 16.56rem;
+      }
+    }
+  }
+}
+
+/* Big Tablet */
+@media screen and (min-width: 960px) {
+  .hero {
+    @include flex(flex-end, center, row);
+    & .hero-img {
+      flex: 1 1 54%;
+      & img {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 2010px) {
+  .hero {
+    padding: 0 4.5rem;
+  }
+}

@@ -1,0 +1,299 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: $black;
+}
+
+a.underlined {
+  text-decoration: underline;
+}
+
+section {
+  padding: 0 1rem;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+}
+span.nowrap {
+  white-space: nowrap;
+}
+
+.full-width {
+  padding: 0;
+  margin: 0;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-66 {
+  width: 66%;
+}
+
+.grid-50 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 3rem 1rem;
+  & .event-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.four-column-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 2rem 1rem;
+}
+
+.flex-auto-resize {
+  @include flex(space-around, flex-end, row);
+  flex-wrap: wrap;
+  & .margin-top-3 {
+    margin-top: 3rem;
+  }
+  & .step-container {
+    flex: 0 1 31%;
+    & .step-img {
+      @include flex(center, center, column);
+    }
+    & .step-desc {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.see-more-wrapper {
+  display: inline-block;
+  margin-top: 3rem;
+  @include flex(flex-end, center, row);
+  & :first-child {
+    margin-right: 1rem;
+  }
+}
+
+.cta {
+  position: relative;
+}
+.title {
+  @include flex(flex-start, flex-start, row);
+}
+
+.cube-wrapper {
+  margin-right: 2rem;
+}
+
+.max-width-2000 {
+  max-width: 2000px;
+  margin: auto;
+}
+
+.bg-yellow {
+  background: $yellow;
+}
+/* Spaces */
+
+.padding-88 {
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+}
+
+.top-60 {
+  margin-top: 3.75rem;
+}
+
+.top-44 {
+  margin-top: 2.75rem;
+}
+
+.top-48 {
+  margin-top: 3rem;
+}
+
+.top-24 {
+  margin-top: 1.5rem;
+}
+
+.bottom-44 {
+  margin-bottom: 2.75rem;
+}
+
+.bottom-18 {
+  margin-bottom: 18px;
+}
+.padding-top-18 {
+  padding-top: 18px;
+}
+
+.no-bottom-space {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Buttons */
+
+.primary-btn {
+  margin-right: 5px;
+  padding: 0.5rem 3.875rem 1rem 3.875rem;
+  background-color: $black;
+  color: $white;
+  border-radius: 4px;
+  box-shadow: rgb(255, 255, 255) 5px -5px 0px -1.5px, $black 5px -5px;
+  &.bg-yellow {
+    box-shadow: $yellow 5px -5px 0px -2px, $black 5px -5px;
+  }
+}
+
+.btn {
+  margin: 0.5rem 0;
+  padding: 1rem 3.75rem;
+  background-color: $black;
+  color: $white;
+  border-radius: 4px;
+  &.secondary {
+    color: $black;
+    background-color: $white;
+    border: 3px solid $black;
+  }
+}
+
+.download-link {
+  margin-top: 1rem;
+}
+
+.btn-container {
+  &.center {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  &.flex-row {
+    @include flex(center, center, column);
+  }
+}
+
+.cta-container {
+  @include flex(flex-end, center, row);
+}
+/* Small Mobile */
+@media screen and (max-width: 340px) {
+  .cube-wrapper {
+    margin-right: 1rem;
+  }
+  .flex-auto-resize {
+    & .step-container {
+      width: 100%;
+      img {
+        width: 15rem;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 760px) {
+  section {
+    padding: 0 2rem;
+  }
+  .grid-50 {
+    gap: 3rem 1.5rem;
+  }
+  .four-column-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 1.5rem;
+  }
+  .see-more-wrapper {
+    &.margin-right {
+      margin-right: 2rem;
+    }
+  }
+  .btn {
+    padding: 1rem 4.75rem;
+  }
+  .btn-container {
+    &.flex-row {
+      @include flex(flex-end, center, row);
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .no-grid-mobile {
+    display: initial;
+    & .desc,
+    .bottom-44,
+    .top-48 {
+      margin-top: 1.5rem;
+    }
+    & .event-img {
+      margin-top: 3.75rem;
+    }
+    & .see-more-wrapper {
+      align-self: flex-end;
+    }
+  }
+}
+
+/* Big Tablet */
+@media screen and (min-width: 960px) {
+  .grid-50 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cube-wrapper {
+    margin-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width: 970px) {
+  .flex-auto-resize {
+    & .step-container {
+      flex: 0 1 40%;
+    }
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+  section {
+    padding: 0 4.5rem;
+  }
+  .four-column-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .flex-auto-resize {
+    & .margin-top-3 {
+      margin-top: 0;
+    }
+    & .step-container {
+      flex: 0 1 31%;
+    }
+  }
+}
