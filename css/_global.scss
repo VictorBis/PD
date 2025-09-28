@@ -255,6 +255,9 @@ span.nowrap {
       @include flex(flex-end, center, row);
     }
   }
+  .desc{
+  margin-top: 0.4rem;
+}
 }
 
 @media screen and (max-width: 960px) {
