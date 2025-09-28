@@ -44,6 +44,9 @@
     &.white {
       background-color: $white;
     }
+    &.yellow {
+      background-color: $cannary;
+    }
   }
   .week-flex {
     @include flex(flex-start, flex-start, column);
@@ -342,8 +345,8 @@
   }
   & .click {
     position: absolute;
-    top: 0;
-    transform: translateX(-15.5rem);
+    top: 2.5rem;
+    transform: translateX(-18rem);
   }
 }
 
@@ -555,7 +558,7 @@
     }
     & .click {
       top: 1rem;
-      transform: translateX(-20rem);
+      transform: translateX(-28rem);
     }
   }
   /* Accordion */
