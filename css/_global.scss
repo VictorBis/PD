@@ -168,6 +168,9 @@ span.nowrap {
   &.bg-yellow {
     box-shadow: $yellow 5px -5px 0px -2px, $black 5px -5px;
   }
+  &.bg-orange{
+    box-shadow: $orange 5px -5px 0px -2px, $black 5px -5px;
+  }
 }
 
 .secondary-btn {
