@@ -246,14 +246,14 @@ span.nowrap {
 
 .see-more-wrapper {
   display: inline-block;
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: row;
 }
 .see-more-wrapper :first-child {
-  margin-right: 1rem;
+  margin-left: 0.5rem;
 }
 
 .cta {
@@ -379,8 +379,9 @@ span.nowrap {
 }
 
 .cta-container {
+  margin-top: 0.5rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
 }
@@ -411,7 +412,7 @@ span.nowrap {
     gap: 3rem 1.5rem;
   }
   .see-more-wrapper.margin-right {
-    margin-right: 2rem;
+    margin-left: 2rem;
   }
   .btn {
     padding: 1rem 4.75rem;
@@ -449,6 +450,13 @@ span.nowrap {
   }
   .cube-wrapper {
     margin-right: 3.75rem;
+  }
+  .cta-container {
+    margin-top: 0rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
   }
 }
 @media screen and (min-width: 970px) {

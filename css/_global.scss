@@ -89,10 +89,10 @@ span.nowrap {
 
 .see-more-wrapper {
   display: inline-block;
-  margin-top: 3rem;
+  margin-top: 1rem;
   @include flex(flex-end, center, row);
   & :first-child {
-    margin-right: 1rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -215,7 +215,8 @@ span.nowrap {
 }
 
 .cta-container {
-  @include flex(flex-end, center, row);
+  margin-top: 0.5rem;
+  @include flex(flex-start, center, row);
 }
 /* Small Mobile */
 @media screen and (max-width: 340px) {
@@ -247,7 +248,7 @@ span.nowrap {
   }
   .see-more-wrapper {
     &.margin-right {
-      margin-right: 2rem;
+      margin-left: 2rem;
     }
   }
   .btn {
@@ -289,6 +290,11 @@ span.nowrap {
   .cube-wrapper {
     margin-right: 3.75rem;
   }
+
+  .cta-container {
+  margin-top: 0rem;
+  @include flex(flex-end, center, row);
+}
 }
 
 @media screen and (min-width: 970px) {
