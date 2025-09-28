@@ -217,7 +217,7 @@ span.nowrap {
   height: auto;
 }
 
-.three-column-grid {
+.three-column-grid, .four-column-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   grid-auto-rows: 1fr;
@@ -406,7 +406,7 @@ span.nowrap {
   .grid-50 {
     gap: 3rem 1.5rem;
   }
-  .three-column-grid {
+  .three-column-grid, .four-column-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem 1.5rem;
   }
@@ -460,6 +460,9 @@ span.nowrap {
   }
   .three-column-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .four-column-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media screen and (min-width: 1300px) {
@@ -714,6 +717,19 @@ footer .copyright {
 }
 .colored-cards .week-flex .no-margin-top {
   margin-top: -0.75rem;
+}
+
+.plan-list li {
+  display: flex;
+  margin-top: 0.5rem;
+}
+.plan-list li .bullet {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.25rem;
+}
+.plan-list li.dot {
+  color: #757575;
 }
 
 /* Cards for Case Studies */
@@ -1152,7 +1168,7 @@ footer .copyright {
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
   }
   .colored-cards .card-content {
-    padding: 1rem 2.25rem;
+    padding: 1rem 1.5rem;
   }
   .final-cta .card-background {
     position: absolute;

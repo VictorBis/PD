@@ -63,7 +63,7 @@ span.nowrap {
   }
 }
 
-.three-column-grid {
+.three-column-grid, .four-column-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   grid-auto-rows: 1fr;
@@ -238,7 +238,7 @@ span.nowrap {
   .grid-50 {
     gap: 3rem 1.5rem;
   }
-  .three-column-grid {
+  .three-column-grid, .four-column-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem 1.5rem;
   }
@@ -300,6 +300,10 @@ span.nowrap {
   }
   .three-column-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .four-column-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

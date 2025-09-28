@@ -53,6 +53,20 @@
   }
 }
 
+.plan-list{
+  & li{
+    display: flex;
+    margin-top: 0.5rem;
+    & .bullet{
+      width: 28px;
+      height: 28px;
+      margin-right: 0.25rem;
+    }
+    &.dot{
+        color: #757575;
+      }
+  }
+}
 /* Cards for Case Studies */
 
 .case-study,
@@ -505,7 +519,7 @@
     background-color: white;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
     & .card-content {
-      padding: 1rem 2.25rem;
+      padding: 1rem 1.5rem;
     }
   }
   .final-cta {
