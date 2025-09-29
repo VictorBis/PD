@@ -68,25 +68,31 @@ span.nowrap {
   grid-template-columns: repeat(1, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 2rem 1rem;
+  grid-auto-rows: auto;
 }
 
-.flex-auto-resize {
-  @include flex(space-around, flex-end, row);
-  flex-wrap: wrap;
+.three-column-grid {
   & .margin-top-3 {
     margin-top: 3rem;
   }
   & .step-container {
-    flex: 0 1 31%;
-    & .step-img {
-      @include flex(center, center, column);
-    }
+    width: 100%;
     & .step-desc {
       margin-top: 2rem;
+      & p{
+        margin-top: 0.25rem;
+      }
     }
   }
 }
 
+.step-img{
+        width: 100%;
+        align-items: flex-start;
+        & img{
+          width: 50%;
+        }
+      }
 .see-more-wrapper {
   display: inline-block;
   margin-top: 1rem;
@@ -223,7 +229,7 @@ span.nowrap {
   .cube-wrapper {
     margin-right: 1rem;
   }
-  .flex-auto-resize {
+  .three-column-grid {
     & .step-container {
       width: 100%;
       img {
@@ -298,9 +304,18 @@ span.nowrap {
 }
 
 @media screen and (min-width: 970px) {
-  .flex-auto-resize {
+  .three-column-grid {
     & .step-container {
-      flex: 0 1 40%;
+      & .step-desc{
+        margin-top: 2rem;
+      }
+      & .step-img{
+        width: 100%;
+        align-items: flex-start;
+        & img{
+          width: 50%;
+        }
+      }
     }
   }
 }
@@ -320,12 +335,9 @@ span.nowrap {
 }
 
 @media screen and (min-width: 1300px) {
-  .flex-auto-resize {
+  .three-column-grid {
     & .margin-top-3 {
       margin-top: 0;
-    }
-    & .step-container {
-      flex: 0 1 31%;
     }
   }
 }
