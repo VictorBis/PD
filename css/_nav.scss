@@ -1,6 +1,9 @@
 header {
   position: relative;
   background-color: $yellow;
+  & .white{
+    background-color: $white;
+  }
 }
 
 .navbar {

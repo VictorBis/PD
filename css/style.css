@@ -310,7 +310,7 @@ span.nowrap {
 }
 
 .padding-top-18 {
-  padding-top: 18px;
+  padding-top: 2rem;
 }
 
 .no-bottom-space {
@@ -333,6 +333,9 @@ span.nowrap {
 }
 .primary-btn.bg-orange {
   box-shadow: #eb8a55 5px -5px 0px -2px, #000000 5px -5px;
+}
+.primary-btn.bg-white {
+  box-shadow: #ffffff 5px -5px 0px -2px, #000000 5px -5px;
 }
 
 .secondary-btn {
@@ -491,6 +494,9 @@ header {
   position: relative;
   background-color: #d8bbe6;
 }
+header .white {
+  background-color: #ffffff;
+}
 
 .navbar {
   padding: 1.125rem 1rem;
@@ -579,6 +585,9 @@ footer .copyright {
   text-align: center;
   background-color: #bbd3e6;
   color: #000000;
+}
+footer .copyright.white {
+  background-color: #ffffff;
 }
 
 /* Tablet */

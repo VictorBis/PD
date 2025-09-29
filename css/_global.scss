@@ -153,7 +153,7 @@ span.nowrap {
   margin-bottom: 18px;
 }
 .padding-top-18 {
-  padding-top: 18px;
+  padding-top: 2rem;
 }
 
 .no-bottom-space {
@@ -176,6 +176,9 @@ span.nowrap {
   }
   &.bg-orange{
     box-shadow: $orange 5px -5px 0px -2px, $black 5px -5px;
+  }
+  &.bg-white{
+    box-shadow: $white 5px -5px 0px -2px, $black 5px -5px;
   }
 }
 

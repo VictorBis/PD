@@ -18,6 +18,10 @@ footer {
     text-align: center;
     background-color: $darkblue;
     color: $black;
+
+    &.white{
+      background-color: $white;
+    }
   }
 }
 
