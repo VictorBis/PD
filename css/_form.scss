@@ -1,0 +1,144 @@
+.contact-section {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+
+    .grid-50 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 120px;
+        align-items: start;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 60px;
+            padding: 0 20px;
+        }
+    }
+
+    .contact-info {
+        h1 {
+            margin-bottom: 24px;
+        }
+
+        p {
+            margin-bottom: 48px;
+            color: rgba($black, 0.7);
+            max-width: 480px;
+            line-height: 1.5;
+        }
+
+        .contact-details {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    color: rgba($black, 0.8);
+
+                    .icon {
+                        width: 24px;
+                        height: 24px;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+
+.form-content-wrapper {
+  .window {
+    background: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba($black, 0.1);
+    box-shadow: 0 6px 16px rgba($black, 0.08);
+
+    .window-actions {
+      display: flex;
+      gap: 8px;
+      padding: 12px 16px;
+      background: $lightblue;
+      border-bottom: 1px solid rgba($black, 0.05);
+    }
+
+    .window-content {
+      padding: 40px;
+
+      @media (max-width: 768px) {
+        padding: 24px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; // separación uniforme entre campos
+
+        .input-container {
+          display: flex;
+          flex-direction: column;
+          gap: 8px; // espacio entre label y input
+
+          label {
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba($black, 0.85);
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            border: 1px solid rgba($black, 0.2);
+            border-radius: 8px;
+            background: $white;
+            color: $black;
+            transition: all 0.2s ease;
+
+            &::placeholder {
+              color: rgba($black, 0.4);
+            }
+
+            &:focus {
+              outline: none;
+              border-color: $orange;
+              box-shadow: 0 0 0 3px rgba($orange, 0.2);
+            }
+          }
+
+          textarea {
+            resize: vertical;
+            min-height: 140px;
+          }
+        }
+
+        button {
+          width: 100%;
+          padding: 16px;
+          font-size: 16px;
+          font-weight: 600;
+          border: none;
+          border-radius: 8px;
+          background: $black;
+          color: $white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: $orange;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Panther Developers</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../">
+                    <img src="../img/Logos/Logo_black.svg" alt="Panther Developers Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../Nosotros/">Nosotros</a>
+                <a href="../Proyectos/">Proyectos</a>
+                <a href="../FAQ/">FAQ</a>
+                <a href="../Contacto/" class="active">Contacto</a>
+            </div>
+            <div class="mobile-menu-button">
+                <img src="../img/Icons/menu.svg" alt="Menú">
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo">
+                <a href="../">
+                    <img src="../img/Logos/Logo_black.svg" alt="Panther Developers Logo">
+                </a>
+            </div>
+            <div class="mobile-menu-close">
+                <img src="../img/Icons/Close-wide.svg" alt="Cerrar menú">
+            </div>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="../Nosotros/">Nosotros</a>
+            <a href="../Proyectos/">Proyectos</a>
+            <a href="../FAQ/">FAQ</a>
+            <a href="../Contacto/" class="active">Contacto</a>
+        </div>
+    </div>
+
+    <main class="contact-section">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h1>Contáctanos</h1>
+                <p>¿Tienes alguna pregunta o te gustaría colaborar con nosotros? Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nombre completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar mensaje</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../img/Logos/Logo_white.svg" alt="Panther Developers Logo">
+            </div>
+            <div class="footer-links">
+                <a href="../Nosotros/">Nosotros</a>
+                <a href="../Proyectos/">Proyectos</a>
+                <a href="../FAQ/">FAQ</a>
+                <a href="../Contacto/">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/mobilemenu.js"></script>
+</body>
+</html>
