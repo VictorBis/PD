@@ -48,7 +48,7 @@
                 <ul class="nav-links">
                     <li class="medium-21 link"><a href="../Proyectos/">Proyectos</a></li>
                     <li class="medium-21 link"><a href="../Nosotros/">Nosotros</a></li>
-                    <li class="medium-21 link"><a href="https://airtable.com/shrOk4zDWSk5nSYXC" target="_blank" class="primary-btn bg-white">Contáctanos</a></li>
+                    <li class="medium-21 link"><a href="../Formulario/" class="primary-btn bg-white">Contáctanos</a></li>
                 </ul>
             </div>
         </nav>
@@ -57,8 +57,8 @@
     <section class="contact-section max-width-2000 padding-88">
         <div class="grid-50">
             <div class="contact-info">
-                <h1 class="semibold-45">Formulario de contacto</h1>
-                <p class="regular-21">¿Tienes alguna pregunta o te gustaría colaborar con nosotros? Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                <h1 class="semibold-45">¡Hablemos de tu proyecto!</h1>
+                <p class="regular-21">¿Tienes una idea increíble y necesitas ayuda para hacerla realidad? Cuéntanos sobre tu proyecto y descubre cómo podemos ayudarte a alcanzar tus objetivos.</p>
                 <div class="contact-details">
                     <ul>
                         <li class="medium-21">
@@ -87,9 +87,7 @@
     </div>
     <div class="window-content">
         
-<form id="contactForm" class="contact-form"
-      action="https://formspree.io/f/TU_ENDPOINT"
-      method="POST">
+<form id="contactForm" class="contact-form">
 
   <div class="input-container">
     <label for="name" class="medium-19">Nombre completo</label>
@@ -102,24 +100,61 @@
   </div>
 
   <div class="input-container">
-    <label for="subject" class="medium-19">Asunto</label>
-    <input type="text" id="subject" name="subject" placeholder="Motivo de contacto" required>
+    <label for="phone" class="medium-19">Número telefónico</label>
+    <input type="tel" id="phone" name="phone" placeholder="Ej. +52 55 1234 5678" required>
+  </div>
+
+  <div class="input-container">
+    <label for="contact-method" class="medium-19">¿Cómo prefieres que te contactemos?</label>
+    <select id="contact-method" name="contact-method" required>
+      <option value="">Selecciona una opción</option>
+      <option value="email">Correo electrónico</option>
+      <option value="phone">Llamada telefónica</option>
+      <option value="whatsapp">WhatsApp</option>
+    </select>
+  </div>
+
+  <div class="input-container">
+    <label for="appointment-type" class="medium-19">Tipo de contacto</label>
+    <select id="appointment-type" name="appointment-type" required>
+      <option value="">Selecciona una opción</option>
+      <option value="consultation">Consulta gratuita (30 min)</option>
+      <option value="project-review">Revisión de proyecto (45 min)</option>
+      <option value="quote">Cotización personalizada (60 min)</option>
+      <option value="support">Soporte técnico (30 min)</option>
+      <option value="other">Solo información general</option>
+    </select>
+  </div>
+
+  <div id="appointment-section" class="input-container" style="display: none;">
+    <label for="preferred-date" class="medium-19">Fecha preferida</label>
+    <input type="date" id="preferred-date" name="preferred-date" min="">
+  </div>
+
+  <div id="time-section" class="input-container" style="display: none;">
+    <label for="preferred-time" class="medium-19">Horario preferido</label>
+    <select id="preferred-time" name="preferred-time">
+      <option value="">Selecciona un horario</option>
+      <option value="09:00">9:00 AM</option>
+      <option value="10:00">10:00 AM</option>
+      <option value="11:00">11:00 AM</option>
+      <option value="14:00">2:00 PM</option>
+      <option value="15:00">3:00 PM</option>
+      <option value="16:00">4:00 PM</option>
+      <option value="17:00">5:00 PM</option>
+    </select>
   </div>
 
   <div class="input-container">
     <label for="message" class="medium-19">Mensaje</label>
-    <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+    <textarea id="message" name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
   </div>
-
-  <!-- Honeypot contra bots -->
-  <input type="text" name="_honey" style="display:none">
-
-  <!-- Redirección tras enviar -->
-  <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
 
   <div class="btn-container">
     <button type="submit" class="primary-btn small-btn semibold-19">Enviar</button>
   </div>
+
+  <div id="status-message" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 0.5rem;"></div>
 </form>
 
 
@@ -135,7 +170,7 @@
             <ul class="options">
                 <li><a href="../Proyectos/" class="medium-19">Proyectos</a></li>
                 <li><a href="../Nosotros/" class="medium-19">Nosotros</a></li>
-                <li><a href="https://airtable.com/shrOk4zDWSk5nSYXC" target="_blank" class="medium-19">Contáctanos</a></li>
+                <li><a href="../Formulario/" class="medium-19">Contáctanos</a></li>
             </ul>
         </div>
         <div class="floating-btn-container" id="floating-menu">
@@ -149,5 +184,36 @@
         </div>
     </footer>
     <script src="../js/mobilemenu.js"></script>
+    <script src="../js/form-handler.js"></script>
+    <script>
+        // Configurar fecha mínima (hoy)
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const minDate = tomorrow.toISOString().split('T')[0];
+        document.getElementById('preferred-date').setAttribute('min', minDate);
+
+        // Manejar cambios en el tipo de cita
+        document.getElementById('appointment-type').addEventListener('change', function() {
+            const appointmentSection = document.getElementById('appointment-section');
+            const timeSection = document.getElementById('time-section');
+            const preferredDate = document.getElementById('preferred-date');
+            const preferredTime = document.getElementById('preferred-time');
+            
+            const showAppointmentFields = this.value !== '' && this.value !== 'other';
+            
+            if (showAppointmentFields) {
+                appointmentSection.style.display = 'block';
+                timeSection.style.display = 'block';
+                preferredDate.setAttribute('required', 'required');
+                preferredTime.setAttribute('required', 'required');
+            } else {
+                appointmentSection.style.display = 'none';
+                timeSection.style.display = 'none';
+                preferredDate.removeAttribute('required');
+                preferredTime.removeAttribute('required');
+            }
+        });
+    </script>
 </body>
 </html>

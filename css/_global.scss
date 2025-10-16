@@ -57,6 +57,7 @@ span.nowrap {
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: auto;
   gap: 3rem 1rem;
+  align-items: stretch;
   & .event-img {
     width: 100%;
     height: auto;
@@ -68,7 +69,6 @@ span.nowrap {
   grid-template-columns: repeat(1, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 2rem 1rem;
-  grid-auto-rows: auto;
 }
 
 .three-column-grid {

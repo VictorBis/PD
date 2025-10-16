@@ -1,53 +1,58 @@
-# ProductClassroom
+# VKE Website
 
-### Welcome to Product Classroom!
+Sitio web corporativo para VKE con sistema integrado de agendamiento de citas.
 
-We are a virtual community made by students for students to self-learn product design!
+![VKE Website](img/SN-Thumbnail/Thumbnail.png)
 
-![Product Classroom](img/SN-Thumbnail/Thumbnail.png)
+## 🚀 Inicio rápido
 
-## Design
+```bash
+# Iniciar servidor de desarrollo
+python3 server.py
 
-Design done in [Figma](https://www.figma.com/file/j8x4p6uX4MpyxLZYfbhKoU/WebDev?node-id=116%3A2).
+# Abrir en navegador
+# http://localhost:8000
+```
 
-## Organization
+## 📖 Documentación
 
-All the elemets that are in the website are organized in the following folders:
+- [`docs/README.md`](docs/README.md) - Información general del proyecto
+- [`docs/DESARROLLO.md`](docs/DESARROLLO.md) - Guía de desarrollo local
+- [`docs/AGENDAMIENTO.md`](docs/AGENDAMIENTO.md) - Sistema de citas con Google Calendar
 
-- [css](#css) - SCSS files used in the website
-- [js](#js) - JS files used in the website
-- [img](#images) - Images contained in the website
-- [doc](https://github.com/VictorBis/ProductClassroom/tree/main/doc) - Contains the curriculums PDF's
-- [favicon](https://github.com/VictorBis/ProductClassroom/tree/main/favicon) - Contains all the icons that are needed to show a favicon in the different browsers
-- [Pages](#page-templates) - Every page in the website is in its own folder
+## ✨ Características principales
 
----
+- **Diseño responsive** - Desktop, tablet y mobile
+- **Sistema de agendamiento** - Integración con Google Calendar
+- **Formulario inteligente** - Campos dinámicos según servicio
+- **Google Workspace** - Sheets, Calendar, Gmail
 
-## CSS
+## 📁 Estructura del proyecto
 
-#### Style
+```
+PD/
+├── css/                    # Estilos SCSS
+├── js/                     # JavaScript
+├── img/                    # Imágenes y assets
+├── docs/                   # Documentación
+├── Formulario/            # Página de contacto
+├── Proyectos/             # Portfolio
+├── Nosotros/              # Equipo
+├── FAQ/                   # Preguntas frecuentes
+├── server.py              # Servidor de desarrollo
+└── index.html             # Página principal
+```
 
-The [style file](https://github.com/VictorBis/ProductClassroom/blob/main/css/style.scss) is the main style file, it contains the links to the styles used in the website.
+## 🛠️ Tecnologías
 
-#### Global
+- **Frontend**: HTML5, CSS3/SCSS, JavaScript
+- **Backend**: Google Apps Script (serverless)
+- **Desarrollo**: Python HTTP Server
+- **Integración**: Google Sheets, Calendar, Gmail
 
-The [global file](https://github.com/VictorBis/ProductClassroom/blob/main/css/_global.scss) contains the styles that are used in multiple pages in the website.
+## 📞 Soporte
 
-<details>
-<summary>Important classes</summary>
-
-- **.primary-btn bg-yellow** Main button (displayed in the nav bar) with a yellow background
-- **.btn** Button displayed in th rest of the website
-- **.btn secondary** Secondary button
-
-</details>
-
-#### Colors
-
-All the colors in the website are defined in the [\_colors.scss](https://github.com/VictorBis/ProductClassroom/blob/main/css/_colors.scss) file. By changing the value of one of them, the color will be updated automatically in the whole website.
-
-<details>
-    <summary>Defined colors</summary>
+Para más información, consulta la documentación en [`docs/`](docs/) o contacta al equipo de desarrollo.
 
 ```css
 $yellow: #f9c449;
