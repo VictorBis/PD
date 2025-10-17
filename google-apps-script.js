@@ -1,5 +1,5 @@
 // Google Apps Script para VKE - Sistema de Agendamiento
-// URL de tu Google Sheet: https://docs.google.com/spreadsheets/d/1g_Ia04PiJ7fIBPmr1zACFFmcqjGQthD9pCtmgbLKNoI/edit
+// URL de tu Google Sheet: https://docs.google.com/spreadsheets/d/PONER_ID/edit
 
 function doPost(e) {
   try {
