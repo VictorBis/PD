@@ -6,14 +6,13 @@
     .grid-50 {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 120px;
+        gap: 8rem;
         align-items: start;
         width: 100%;
 
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
             gap: 60px;
-            padding: 0 20px;
         }
     }
 
@@ -24,7 +23,7 @@
 
         p {
             margin-bottom: 48px;
-            color: rgba($black, 0.7);
+            color: $black;
             max-width: 480px;
             line-height: 1.5;
         }
@@ -39,7 +38,7 @@
                     display: flex;
                     align-items: center;
                     gap: 16px;
-                    color: rgba($black, 0.8);
+                    color: $black;
 
                     .icon {
                         width: 24px;
@@ -56,28 +55,26 @@
     background: $white;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba($black, 0.1);
-    box-shadow: 0 6px 16px rgba($black, 0.08);
+    border: 2px solid $black;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
+
+   .window-icon-wrapper{
+      padding: 0.5rem;
+  border-right: 2px solid #000000;
+    }
 
     .window-actions {
       display: flex;
-      gap: 8px;
-      padding: 12px 16px;
       background: $lightblue;
-      border-bottom: 1px solid rgba($black, 0.05);
+      border-bottom: 2px solid $black;
     }
 
     .window-content {
-      padding: 40px;
-
-      @media (max-width: 768px) {
-        padding: 24px;
-      }
 
       form {
         display: flex;
         flex-direction: column;
-        gap: 20px; // separación uniforme entre campos
+        gap: 1.5rem; // separación uniforme entre campos
 
         .input-container {
           display: flex;
@@ -85,17 +82,14 @@
           gap: 8px; // espacio entre label y input
 
           label {
-            font-size: 15px;
-            font-weight: 500;
-            color: rgba($black, 0.85);
+            color: $black;
           }
 
           input,
           textarea {
             width: 100%;
             padding: 14px 16px;
-            font-size: 15px;
-            border: 1px solid rgba($black, 0.2);
+            border: 2px solid $black;
             border-radius: 8px;
             background: $white;
             color: $black;
@@ -141,8 +135,8 @@
       select {
         width: 100%;
         padding: 16px 20px;
-        border: 2px solid rgba($black, 0.1);
-        border-radius: 12px;
+        border: 2px solid $black;
+        border-radius: 8px;
         background: $white;
         font-size: 16px;
         color: $black;
