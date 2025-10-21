@@ -7,7 +7,24 @@ const PORT = process.env.PORT || 8000;
 
 // Middleware
 app.use(cors());
-app.use(express.static('.'));
+
+// Servir archivos estáticos con configuración específica
+app.use('/css', express.static(path.join(__dirname, 'css'), {
+    setHeaders: (res, path) => {
+        if (path.endsWith('.css')) {
+            res.setHeader('Content-Type', 'text/css');
+        }
+    }
+}));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/img', express.static(path.join(__dirname, 'img')));
+app.use('/favicon', express.static(path.join(__dirname, 'favicon')));
+
+// Middleware general para otros archivos estáticos
+app.use(express.static(__dirname, {
+    maxAge: '1d' // Cache por 1 día
+}));
+
 app.use(express.json());
 
 // Middleware para inyectar variables de entorno en todas las páginas HTML

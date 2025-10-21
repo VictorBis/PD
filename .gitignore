@@ -1,0 +1,42 @@
+# Dependencias de Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+
+# Archivos temporales del sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archivos de compilación SASS
+*.css.map
+
+# Archivos de VSCode
+.vscode/
+
+# Carpetas de cache
+.cache/
+.tmp/
+
+# Archivos de Vercel
+.vercel
+
+# Archivos de backup
+*.bak
+*~

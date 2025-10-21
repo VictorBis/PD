@@ -1,0 +1,21 @@
+# Archivos de desarrollo
+*.scss
+css/*.scss
+css/_*.scss
+*.map
+.DS_Store
+node_modules
+.git
+
+# Archivos de documentación 
+README.md
+docs/
+doc/
+
+# Archivos de Python (si no los necesitas en Vercel)
+server.py
+*.py
+
+# Archivos de configuración local
+.env
+.env.local
