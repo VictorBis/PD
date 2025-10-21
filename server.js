@@ -33,10 +33,22 @@ app.use((req, res, next) => {
         const originalSend = res.send;
         res.send = function(body) {
             if (typeof body === 'string' && body.includes('<head>')) {
+                // Obtener la URL base del sitio
+                const baseUrl = process.env.VERCEL_URL 
+                    ? `https://${process.env.VERCEL_URL}` 
+                    : `${req.protocol}://${req.get('host')}`;
+                
                 const envScript = `
                 <script>
                     globalThis.GOOGLE_SCRIPT_URL = '${process.env.GOOGLE_SCRIPT_URL || ''}';
                 </script>`;
+                
+                // Reemplazar URLs relativas en meta tags con URLs absolutas
+                body = body.replaceAll('content="/img/SN-Thumbnail/Thumbnail.png"', 
+                    `content="${baseUrl}/img/SN-Thumbnail/Thumbnail.png"`);
+                body = body.replace('content="https://www.vike.com.mx"', 
+                    `content="${baseUrl}"`);
+                
                 body = body.replace('</head>', envScript + '</head>');
             }
             originalSend.call(this, body);
