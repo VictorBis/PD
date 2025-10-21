@@ -1,21 +1,26 @@
-# Archivos de desarrollo
-*.scss
+# Archivos de desarrollo - SASS
 css/*.scss
 css/_*.scss
+
+# Source maps
 *.map
+
+# Sistema
 .DS_Store
-node_modules
 .git
 
-# Archivos de documentación 
+# Documentación 
 README.md
 docs/
 doc/
 
-# Archivos de Python (si no los necesitas en Vercel)
+# Python (no necesario para Vercel)
 server.py
 *.py
 
-# Archivos de configuración local
+# Configuración local
 .env
 .env.local
+
+# Development dependencies
+package-lock.json

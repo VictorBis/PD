@@ -6,9 +6,8 @@
   "scripts": {
     "build": "sass css/style.scss css/style.css --style=compressed",
     "build:watch": "sass css/style.scss css/style.css --watch",
-    "start": "npm run build && node server.js",
+    "start": "node server.js",
     "dev": "npm run build:watch & node server.js",
-    "vercel-build": "npm run build",
     "python": "python3 server.py"
   },
   "keywords": ["website", "development", "server"],
@@ -16,10 +15,10 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "sass": "^1.70.0"
+    "cors": "^2.8.5"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "sass": "^1.70.0"
   }
 }
