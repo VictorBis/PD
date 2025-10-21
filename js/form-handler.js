@@ -1,8 +1,22 @@
 // Configuración del formulario para Google Sheets
-// La URL se obtiene desde las variables de entorno de Vercel
-const GOOGLE_SCRIPT_URL = globalThis.GOOGLE_SCRIPT_URL
+let GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxbCqpL61YF8BQAaFr_hR9O-XTH05oEp6CfR7rt2YhO_L9mREB65l4Mwv4xp7TT9N5q/exec'; // Fallback
 
-document.addEventListener('DOMContentLoaded', function() {
+// Obtener configuración del servidor
+async function loadConfig() {
+    try {
+        const response = await fetch('/api/config');
+        if (response.ok) {
+            const config = await response.json();
+            GOOGLE_SCRIPT_URL = config.googleScriptUrl;
+        }
+    } catch {
+        // Usar fallback URL si falla la configuración
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async function() {
+    // Cargar configuración primero
+    await loadConfig();
     const form = document.getElementById('contactForm');
     const statusMessage = document.getElementById('status-message');
 

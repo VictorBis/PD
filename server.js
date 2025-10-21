@@ -57,6 +57,13 @@ app.use((req, res, next) => {
     next();
 });
 
+// API endpoint para obtener configuración
+app.get('/api/config', (req, res) => {
+    res.json({
+        googleScriptUrl: process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxbCqpL61YF8BQAaFr_hR9O-XTH05oEp6CfR7rt2YhO_L9mREB65l4Mwv4xp7TT9N5q/exec'
+    });
+});
+
 // Rutas para las páginas
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
