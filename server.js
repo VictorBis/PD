@@ -10,6 +10,24 @@ app.use(cors());
 app.use(express.static('.'));
 app.use(express.json());
 
+// Middleware para inyectar variables de entorno en todas las páginas HTML
+app.use((req, res, next) => {
+    if (req.path.endsWith('.html') || req.path === '/' || req.path.endsWith('/')) {
+        const originalSend = res.send;
+        res.send = function(body) {
+            if (typeof body === 'string' && body.includes('<head>')) {
+                const envScript = `
+                <script>
+                    globalThis.GOOGLE_SCRIPT_URL = '${process.env.GOOGLE_SCRIPT_URL || ''}';
+                </script>`;
+                body = body.replace('</head>', envScript + '</head>');
+            }
+            originalSend.call(this, body);
+        };
+    }
+    next();
+});
+
 // Rutas para las páginas
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

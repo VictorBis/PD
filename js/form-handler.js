@@ -1,6 +1,6 @@
 // Configuración del formulario para Google Sheets
-// IMPORTANTE: Reemplaza esta URL con la URL de tu Google Apps Script
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxbCqpL61YF8BQAaFr_hR9O-XTH05oEp6CfR7rt2YhO_L9mREB65l4Mwv4xp7TT9N5q/exec';
+// La URL se obtiene desde las variables de entorno de Vercel
+const GOOGLE_SCRIPT_URL = globalThis.GOOGLE_SCRIPT_URL
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
