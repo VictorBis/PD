@@ -1,6 +1,6 @@
 // Configuración del formulario para Google Sheets
 // IMPORTANTE: Reemplaza esta URL con la URL de tu Google Apps Script
-const GOOGLE_SCRIPT_URL = 'TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxbCqpL61YF8BQAaFr_hR9O-XTH05oEp6CfR7rt2YhO_L9mREB65l4Mwv4xp7TT9N5q/exec';
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
